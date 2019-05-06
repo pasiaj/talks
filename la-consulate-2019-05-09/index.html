@@ -2,12 +2,30 @@
 <html>
 <head>
     <title>Brief History of the Finnish Gaming Industry</title>
+    <link rel="stylesheet" href="https://use.typekit.net/lxv6isn.css">
     <style type="text/css" media="screen">
         html, body {
             margin: 0px;
             padding: 0px;
             border: 0px;
+            font-family: whitman-display, serif;
         }
+        a:link {
+            color: #595959 ;
+        }
+        /* visited link */
+        a:visited {
+          color: #595959;
+        }
+        /* mouse over link */
+        a:hover {
+          color: #595959;
+        }
+        /* selected link */
+        a:active {
+          color: #595959;
+        }
+
         body { height: 100%; position: relative; }
         body { padding: 0; margin: 0; color: #595959; }
         .content {
@@ -19,7 +37,25 @@
             right: 5%;
         }
         .slide {
+            padding-top: 30vh;
             height: 100vh;
+            text-align: center;
+        }
+        .container {
+            width: 500px;
+            margin: 0 auto;
+        }
+        .box {
+            display: inline-block;
+            width: 49%;
+        }
+        .box img {
+            height: 100px;
+            object-fit: cover;
+        }
+        .round { border-radius: 1000px; }
+        .intro {
+            font-family: futura-pt, sans-serif;
         }
         blockquote {
             position: relative;
@@ -37,23 +73,25 @@
             left: 1vw;
             z-index: -1;
         }
-        blockquote .year { position: absolute; bottom: 0vh; right: 0; font-size: 200px; color: #eee; font-family: "Futura PT"; z-index: -1; }
+        blockquote .year { position: absolute; bottom: 0vh; right: 0; font-size: 200px; color: #eee; font-family: futura-pt, sans-serif; z-index: -1; }
         blockquote .quote { z-index: 2; font-size: 55px; }
         blockquote .name { font-size: 40px; }
 
         blockquote .quote {
-            font-family: Charter;
+            font-family: whitman-display, serif;
+            font-weight: 300;
             font-style: italic;
         }
         blockquote .name {
-            font-family: "Futura PT";
+            font-family: futura-pt, sans-serif;
+            font-weight: 300;
         }
         .person {
             height: 100px;
             width: 100px;
             display: inline-block;
             text-align: center;
-            font-family: "Futura PT";
+            font-family: futura-pt, sans-serif;
         }
         .person:hover {}
         .person img {
@@ -67,14 +105,14 @@
             transition: all 0.5s ease;
         }
         .person:hover img, .person.active img { width: 100%; height: 100%; padding: 0; filter: none; }
-        .person h3 { font-size: 10px;  }
+        .person h3 { display: none; font-size: 10px;  }
         .person p { margin-top: -5px; }
 
         /* On screens that are 992px or less, set the background color to blue */
         @media screen and (max-width: 992px) {
             blockquote .quote { font-size: 35px; }
             blockquote .name { font-size: 30px; }
-            .person { height: 80px; width: 80px; }
+            .person { height: 70px; width: 70px; }
             .content { padding-bottom: 100px;}
         }
 
@@ -90,6 +128,34 @@
 <body>
     <div class="content">
         <div class="slide">
+            <h1>Snapshots from Finnish Gaming Industry</h1>
+            <p>This talk was held at the Finnish Consulate General's residence in Los Angeles on 9th of May, 2019. </p>
+            <br>
+            <br>
+
+            <br>
+            <br>
+            <div class="container">
+                <div class="box">
+                    <img src="images/FGIR2018cover_web.png" alt="FINNISH GAME INDUSTRY 2018 REPORT">
+                    <p>Download the report on <br/><a href="http://www.neogames.fi/wp-content/uploads/2019/04/FGIR-2018-Report.pdf">Finnish Game Industry 2018</a> </p>
+                </div>                <div class="box">
+                    <a href="https://www.linkedin.com/in/pasijokinen/"><img class="round" src="images/pasi.jpg" alt="Pasi Jokinen"></a>
+                    <p>Find our more on <a href="https://www.linkedin.com/in/pasijokinen/">Pasi Jokinen</a> <br> Fingersoft</p>
+                </div>
+
+<!--                 <div class="box">
+                    <a href="http://www.fingersoft.net"><img class="round" src="images/fs.png" alt="Fingersoft"></a>
+                </div>
+                <div class="box">
+                    <a href="https://round-zero.com/"><img class="round" src="images/rz.png" alt="Round Zero"></a>
+                </div> -->
+            </div>
+                        <br>
+            <br>
+            <br>
+
+
 
         </div>
         <a name="ilari"></a>
@@ -101,13 +167,13 @@
         <a name="riot"></a>
         <blockquote>
             <p class="year">2002</p>
-            <p class="quote">False start of mobile | Nokia & Riot Entertainment, maybe</p>
+            <p class="quote"><!-- False start of mobile | Nokia --></p>
             <p class="name"></p>
         </blockquote>
         <a name="rovio"></a>
         <blockquote>
             <p class="year">2009</p>
-            <p class="quote">iPhone era. Rovio, maybe</p>
+            <p class="quote"><!-- iPhone --></p>
             <p class="name"></p>
         </blockquote>
         <a name="samuli"></a>
@@ -119,25 +185,25 @@
         <a name="toni"></a>
         <blockquote>
             <p class="year">2012</p>
-            <p class="quote">I saw this simple free-to-play BMX game by Ben Hazard that had netted $3M. I knew I could make a better game. So I made Hill Climb Racing as this quick test.</p>
+            <p class="quote">I saw this simple free-to-play BMX game by Ben Hazard that had netted $3M. I knew I could make a better game. So I made Hill Climb Racing just as a quick test.</p>
             <p class="name">Toni Fingerroos, founder of Fingersoft. Hill Climb Racing has been downloaded more than 1 billion times.</p>
         </blockquote>
         <a name="cell"></a>
         <blockquote>
             <p class="year">2016</p>
-            <p class="quote">Creating the second and third success</p>
+            <p class="quote"><!-- Creating the second and third success --></p>
             <p class="name"></p>
         </blockquote>
         <a name="small"></a>
         <blockquote>
             <p class="year">2018</p>
-            <p class="quote">Scaling Performance Marketing</p>
+            <p class="quote"><!-- Scaling UA --></p>
             <p class="name"></p>
         </blockquote>
         <a name="daniel"></a>
         <blockquote>
             <p class="year">2019</p>
-            <p class="quote">Modularization, metrics driven development</p>
+            <p class="quote"><!-- Modularization, metrics driven development --></p>
             <p class="name"></p>
         </blockquote>
     </div>
@@ -154,7 +220,7 @@
                 <p>2002</p>
             </li>
             <li class="person"> <!-- iPhone -->
-                <a href="#rovio"><img src="images/mikael.jpg" alt=""></a>
+                <a href="#rovio"><img src="images/muumi.png" alt=""></a>
                 <h3>?</h3>
                 <p>2009</p>
             </li>
