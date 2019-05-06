@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Brief History of the Finnish Gaming Industry</title>
+    <style type="text/css" media="screen">
+        html, body {
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+        }
+        body { height: 100%; position: relative; }
+        body { padding: 0; margin: 0; color: #595959; }
+        .content {
+            height: 100vh;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            right: 5%;
+        }
+        .slide {
+            height: 100vh;
+        }
+        blockquote {
+            position: relative;
+            width: 70%;
+            height: 100vh;
+            padding: 3% 0 0 5%;
+        }
+        blockquote:before {
+            color: #ccc;
+            content: "\“";
+            font-family: "Times New Roman";
+            font-size: 400px;
+            position: absolute;
+            top: -1vh;
+            left: 1vw;
+            z-index: -1;
+        }
+        blockquote .year { position: absolute; bottom: 0vh; right: 0; font-size: 200px; color: #eee; font-family: "Futura PT"; z-index: -1; }
+        blockquote .quote { z-index: 2; font-size: 55px; }
+        blockquote .name { font-size: 40px; }
+
+        blockquote .quote {
+            font-family: Charter;
+            font-style: italic;
+        }
+        blockquote .name {
+            font-family: "Futura PT";
+        }
+        .person {
+            height: 100px;
+            width: 100px;
+            display: inline-block;
+            text-align: center;
+            font-family: "Futura PT";
+        }
+        .person:hover {}
+        .person img {
+            object-fit: cover;
+            border-radius: 100px;
+            width: 80%;
+            height: 80%;
+            padding: 10%;
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+            transition: all 0.5s ease;
+        }
+        .person:hover img, .person.active img { width: 100%; height: 100%; padding: 0; filter: none; }
+        .person h3 { font-size: 10px;  }
+        .person p { margin-top: -5px; }
+
+        /* On screens that are 992px or less, set the background color to blue */
+        @media screen and (max-width: 992px) {
+            blockquote .quote { font-size: 35px; }
+            blockquote .name { font-size: 30px; }
+            .person { height: 80px; width: 80px; }
+            .content { padding-bottom: 100px;}
+        }
+
+        /* On screens that are 600px or less, set the background color to olive */
+        @media screen and (max-width: 600px) {
+            blockquote .quote { font-size: 20px; }
+            blockquote .name { font-size: 16px; }
+            .person { height: 50px; width: 50px; }
+            .content { padding-bottom: 80px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="slide">
+
+        </div>
+        <a name="ilari"></a>
+        <blockquote>
+            <p class="year">1995</p>
+            <p class="quote">In May Finland won the Ice Hockey World Championships. In June we got funded. In August I was looking at my first paycheck, amazed that one can actually make money doing this.</p>
+            <p class="name">Ilari Kuittinen, CEO of Housemarque, on getting their first publishing deal.</p>
+        </blockquote>
+        <a name="riot"></a>
+        <blockquote>
+            <p class="year">2002</p>
+            <p class="quote">False start of mobile | Nokia & Riot Entertainment, maybe</p>
+            <p class="name"></p>
+        </blockquote>
+        <a name="rovio"></a>
+        <blockquote>
+            <p class="year">2009</p>
+            <p class="quote">iPhone era. Rovio, maybe</p>
+            <p class="name"></p>
+        </blockquote>
+        <a name="samuli"></a>
+        <blockquote>
+            <p class="year">2010</p>
+            <p class="quote">Nobody wanted to touch us. We had to beg people to come see what we had built. Finally we got one small publisher to take a look. They loved it. The word spread like wildfire overnight and the next morning there was a line at the door.</p>
+            <p class="name">Samuli Syvähuoko, founder of Recoil Games, on getting a publishing deal after a failed project. </p>
+        </blockquote>
+        <a name="toni"></a>
+        <blockquote>
+            <p class="year">2012</p>
+            <p class="quote">I saw this simple free-to-play BMX game by Ben Hazard that had netted $3M. I knew I could make a better game. So I made Hill Climb Racing as this quick test.</p>
+            <p class="name">Toni Fingerroos, founder of Fingersoft. Hill Climb Racing has been downloaded more than 1 billion times.</p>
+        </blockquote>
+        <a name="cell"></a>
+        <blockquote>
+            <p class="year">2016</p>
+            <p class="quote">Creating the second and third success</p>
+            <p class="name"></p>
+        </blockquote>
+        <a name="small"></a>
+        <blockquote>
+            <p class="year">2018</p>
+            <p class="quote">Scaling Performance Marketing</p>
+            <p class="name"></p>
+        </blockquote>
+        <a name="daniel"></a>
+        <blockquote>
+            <p class="year">2019</p>
+            <p class="quote">Modularization, metrics driven development</p>
+            <p class="name"></p>
+        </blockquote>
+    </div>
+    <div class="footer">
+        <ul>
+            <li class="person">
+                <a href="#ilari"><img src="images/ilari.jpg" alt=""></a><!--Amiga -> PC-->
+                <h3>Ilari Kuittinen</h3>
+                <p>1995</p>
+            </li>
+            <li class="person"> <!-- False start of mobile -->
+                <a href="#riot"><img src="images/muumi.png" alt=""></a>
+                <h3>?</h3>
+                <p>2002</p>
+            </li>
+            <li class="person"> <!-- iPhone -->
+                <a href="#rovio"><img src="images/mikael.jpg" alt=""></a>
+                <h3>?</h3>
+                <p>2009</p>
+            </li>
+            <li class="person"> <!-- Digital distribution -->
+                <a href="#samuli"><img src="images/samuli.jpg" alt=""></a>
+                <h3>Samuli&nbsp;Syvähuoko</h3>
+                <p>2010</p>
+            </li>
+            <li class="person"> <!-- free-to-play -->
+                <a href="#toni"><img src="images/toni.jpg" alt=""></a>
+                <h3>Toni Fingerroos</h3>
+                <p>2012</p>
+            </li>
+            <li class="person">
+                <a href="#cell"><img src="images/muumi.png" alt=""></a>
+                <h3>Supercell</h3>
+                <p>2016</p>
+            </li>
+            <li class="person"> <!-- user-acquisition -->
+                <a href="#small"><img src="images/muumi.png" alt=""></a>
+                <h3>Small Giant</h3>
+                <p>2018</p>
+            </li>
+<!--            <li class="person">
+                <a href="#daniel"><img src="images/daniel.jpg" alt=""></a>
+                <h3>Daniel Rantala</h3>
+                <p>2019</p>
+            </li>
+-->
+<!--
+# 2001-2002 Riot Entertainment: Markus Pasula, SMS-content
+# 2002-2005 Jotain Nokiasta: Start of mobile gaming?
+# 2007 Mikael Hed - on iPhone: Touch screen
+# 2012 Supercell??
+# 2018 Scaling through UA - Small Giant Games
+# 2019 Round Zero -metrics driven development.
+-->
+
+        </ul>
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+        var data = [];
+    </script>
+</body>
+</html>
