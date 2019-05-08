@@ -1,0 +1,5 @@
+#osx xcode
+DerivedData/
+*.DS_Store
+*.build
+*.xcodeproj
