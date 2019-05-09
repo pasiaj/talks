@@ -1,862 +1,945 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Snapshots from Finnish Game Industry</title>
-    <link rel="stylesheet" href="https://use.typekit.net/lxv6isn.css">
-    <meta charset="utf-8"/>
-    <style type="text/css" media="screen">
+    <head>
+        <title>Tightly Knit Snapshots</title>
+        <link rel="stylesheet" href="https://use.typekit.net/lxv6isn.css">
+        <meta charset="utf-8"/>
+        <style type="text/css" media="screen">
         html, body {
-            margin: 0px;
-            padding: 0px;
-            border: 0px;
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
         }
         a:link {
-            color: #595959 ;
+        color: #595959;
         }
         /* visited link */
         a:visited {
-          color: #595959;
+        color: #595959;
         }
         /* mouse over link */
         a:hover {
-          color: #595959;
+        color: #595959;
         }
         /* selected link */
         a:active {
-          color: #595959;
+        color: #595959;
         }
-
         body { height: 100%; position: relative; }
         body { padding: 0; margin: 0; color: #595959; }
         .content {
-            height: 100vh;
+        height: 100vh;
         }
         .footer {
-            position: fixed;
-            bottom: 0;
-            right: 5%;
+        position: fixed;
+        bottom: 0;
+        right: 5%;
         }
         .slide {
-            font-family: whitman-display, serif;
-            padding-top: 20vh;
-            height: 100vh;
-            text-align: center;
+        font-family: whitman-display, serif;
+        height: 100vh;
+        text-align: center;
+        margin: 10vh 0;
+        overflow: hidden;
+        }
+        .start {
+        font-family: futura-pt, serif;
         }
         .container {
-            margin: 0 auto;
+        margin: 0 auto;
         }
         .box {
-            display: inline-block;
-            width: 300px;
-            padding-bottom: 30px;
+        padding: 10px;
+        display: inline-block;
+        width: 300px;
+        font-family: futura-pt, serif;
         }
         .box img {
-            height: 100px;
-            width: 100px;
-            object-fit: cover;
+        height: 100px;
+        width: 100px;
+        object-fit: cover;
         }
         .round { border-radius: 1000px; }
         .intro {
-            font-family: futura-pt, sans-serif;
+        font-family: futura-pt, sans-serif;
         }
-        .companies {
-            column-count: 9;
-            font-family: whitman-display, serif;
-            font-size: 10px;
+        .big-numbers {
+        font-family: futura-pt, serif;
+        font-weight: 700;
+        }
+        .companies img {
+        max-width: 60vw;
+        max-height: 60vh;
+        margin-bottom: -65vh;
+        }
+        .companies .list {
+        column-count: 9;
+        font-family: whitman-display, serif;
+        font-size: 10px;
         }
         .live img {
-            padding: 0.2vh 0.2vw;
-            max-height: 9vh;
-            max-width: 8vw;
+        border-radius: 25px;
+        padding: 0.5vh 0.5vw;
+        max-height: 9vh;
+        max-width: 8vw;
+        border: 1px solid white;
+        transition: all 0.1s ease;
+        }
+        .live img:hover {
+        border-radius: 0;
+        border: 1px solid #ccc;
         }
         blockquote {
-            position: relative;
-            width: 70%;
-            height: 100vh;
-            padding: 3% 0 0 5%;
+        position: relative;
+        width: 70%;
+        height: 100vh;
+        padding: 3% 0 0 5%;
         }
         blockquote:before {
-            color: #ccc;
-            content: "\201C";
-            font-family: "Times New Roman", sherif;
-            font-size: 400px;
-            position: absolute;
-            top: -1vh;
-            left: 1vw;
-            z-index: -1;
+        color: #ccc;
+        content: "\201C";
+        font-family: "Times New Roman", sherif;
+        font-size: 400px;
+        position: absolute;
+        top: 10vh;
+        left: 1vw;
+        z-index: -1;
         }
-        blockquote .year { font-size: 40px; height: 50px; margin-bottom: -50px; color: #eee; font-family: futura-pt, sans-serif; z-index: -1; }
+        blockquote .year {
+        margin: 1vh 0 3vh 0;
+        color: #eee;
+        font-family: futura-pt, sans-serif;
+        font-size: 10vh;
+        z-index: -1;
+        }
         blockquote .year:before {}
         blockquote .year:before { }
-        blockquote .quote { z-index: 2; font-size: 55px; }
         blockquote .name { font-size: 40px; }
-
         blockquote .quote {
-            font-family: whitman-display, serif;
-            font-weight: 300;
-            font-style: italic;
+        z-index: 2;
+        font-size: 55px;
+        margin: 0;
+        font-family: whitman-display, serif;
+        font-weight: 300;
+        font-style: italic;
         }
+        .recap {
+        text-align: left;
+        z-index: 2;
+        font-size: 55px;
+        margin: 0;
+        font-family: whitman-display, serif;
+        font-weight: 300;
+        font-style: italic;
+        position: relative;
+        width: 70%;
+        height: 100vh;
+        padding: 3% 0 0 5%;
+
+        }
+        .recap ul, .recap li {
+        font-size: 40px;
+        font-family: whitman-display, serif;
+        font-weight: 300;
+        font-style: italic;
+        }
+
+        .recap span { font-size: 20px; line-height: 20px; position: relative; top: -10px; }
+
         blockquote .name {
-            font-family: futura-pt, sans-serif;
-            font-weight: 300;
+        font-family: futura-pt, sans-serif;
+        font-weight: 300;
         }
         .person {
-            height: 100px;
-            width: 100px;
-            display: inline-block;
-            text-align: center;
-            font-family: futura-pt, sans-serif;
+        height: 100px;
+        width: 100px;
+        display: inline-block;
+        text-align: center;
+        font-family: futura-pt, sans-serif;
         }
         .person:hover {}
         .person img {
-            object-fit: cover;
-            border-radius: 100px;
-            width: 80%;
-            height: 80%;
-            padding: 10%;
-            -webkit-filter: grayscale(100%);
-            filter: grayscale(100%);
-            transition: all 0.5s ease;
+        object-fit: cover;
+        border-radius: 100px;
+        width: 80%;
+        height: 80%;
+        padding: 10%;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        transition: all 0.5s ease;
         }
         .person:hover img, .person.active img { width: 100%; height: 100%; padding: 0; filter: none; }
         .person h3 { display: none; font-size: 10px;  }
         .person p { margin-top: -5px; }
-
         /* On screens that are 992px or less, set the background color to blue */
         @media screen and (max-width: 992px) {
-            blockquote .quote { font-size: 35px; }
-            blockquote .name { font-size: 30px; }
-            .person { height: 70px; width: 70px; }
-            .content { padding-bottom: 100px;}
-            .companies { font-size: 8px; }
+        blockquote .quote { font-size: 35px; }
+        blockquote .name { font-size: 30px; }
+        .recap { font-size: 35px; }
+        .recap li { font-size: 30px; }
+        .person { height: 70px; width: 70px; }
+        .content { padding-bottom: 100px;}
+        .companies { font-size: 8px; }
         }
-
+        }
         /* On screens that are 600px or less, set the background color to olive */
         @media screen and (max-width: 600px) {
-            blockquote .quote { font-size: 20px; }
-            blockquote .name { font-size: 16px; }
-            .person { height: 50px; width: 50px; }
-            .content { padding-bottom: 80px; }
-            .companies { font-size: 5px; }
+        blockquote .quote { font-size: 20px; }
+        blockquote .name { font-size: 16px; }
+        .recap { font-size: 20px; }
+        .recap li { font-size: 18px; }
+        .person { height: 50px; width: 50px; }
+        .content { padding-bottom: 80px; }
+        .companies { font-size: 5px; }
+        .live img { max-width: 14vw; }
         }
-    </style>
-</head>
-<body>
-    <div class="content">
-        <div class="slide">
-            <h1>Snapshots from Finnish Game Industry</h1>
-           <br>
-           <br>
-           <br>
-           <br>
-            <div class="container">
-
-                <div class="box">
-                    <img class="round" src="images/pasi.jpg" alt="Pasi Jokinen">
-                    <h3>Pasi Jokinen</h3>
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <div class="slide start">
+                <br>
+                <br>
+                <br>
+                <br>
+                <img style="width:300px;" src="images/knit2.png">
+                <h1>Tightly-knit transitions</h1>
+                <h2>Snapshots of the Finnish Game Industry</h2>
+                <div class="container">
+                    <div class="box">
+                    </div>
+                    <!--                 <div class="box">
+                        <a href="http://www.fingersoft.net"><img class="round" src="images/fs.png" alt="Fingersoft"></a>
+                    </div>
+                    <div class="box">
+                        <a href="https://round-zero.com/"><img class="round" src="images/rz.png" alt="Round Zero"></a>
+                    </div> -->
                 </div>
-
-<!--                 <div class="box">
-                    <a href="http://www.fingersoft.net"><img class="round" src="images/fs.png" alt="Fingersoft"></a>
-                </div>
-                <div class="box">
-                    <a href="https://round-zero.com/"><img class="round" src="images/rz.png" alt="Round Zero"></a>
-                </div> -->
             </div>
+            <div class="slide" style="background: url('images/hcr-background.jpg') center center;   background-size: cover; padding-top: 1px;
+                ">
+                <div class="container" style="background: rgba(255,255,255, 80%); padding: 10px; margin-top: 50vh;">
+                    <div class="box">
+                        <img class="round" src="images/pasi.jpg" alt="Pasi Jokinen">
+                        <h3 style="padding: 0; margin-bottom: 0;">Pasi Jokinen</h3>
+                    </div>
+                    <div class="box">
+                        <a href="http://playhcr.com"><img style="width: auto;" src="images/hill_climb_racing_2_logo.png" alt="Hill Climb Racing"></a>
+                        <h3  style="padding: 0; margin-bottom: 0;">Hill Climb Racing</h3>
+                    </div>
+                    <div class="box">
+                        <a href="http://www.fingersoft.net"><img class="round" src="images/fs.png" alt="Fingersoft"></a>
+                        <h3  style="padding: 0; margin-bottom: 0;">Fingersoft</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="slide companies">
+                <img src="images/big-numbers.png" alt="">
+                <div class="list">
+                    10 tons<br />
+                    10monkeys<br />
+                    3DTalo Finland<br />
+                    3rd Eye Studios<br />
+                    4mob Games<br />
+                    5 more minutes<br />
+                    A1 Media<br />
+                    Aatos Media<br />
+                    ActionSquad Studios<br />
+                    Add Inspiration<br />
+                    Advant Games<br />
+                    Adventure Islands<br />
+                    Aeonic Entertainment<br />
+                    Afterlife Entertainment<br />
+                    Aittokoski Experience<br />
+                    Almost Human<br />
+                    Alpakka Media<br />
+                    Alternative Games<br />
+                    Amistech Games<br />
+                    Aniway<br />
+                    Antiproto<br />
+                    Apex Games<br />
+                    App Innovations Finland<br />
+                    Appiukko<br />
+                    Appstar<br />
+                    Aptual<br />
+                    Arcticplay Studios<br />
+                    Areena-pelit<br />
+                    Armada Interactive<br />
+                    Astalo Games<br />
+                    Astrosnout<br />
+                    Ataverti Tmi<br />
+                    Aware Games Coop<br />
+                    Hempuli<br />
+                    Bad Crane<br />
+                    Bad Mood Games<br />
+                    Ball-it<br />
+                    Barracuda Disaster<br />
+                    Beiz<br />
+                    BelleGames<br />
+                    Big Ear Games<br />
+                    BitByByte Creations<br />
+                    Bitecore<br />
+                    BitWeird<br />
+                    Black Poodle Entertainment<br />
+                    Blackland Games<br />
+                    Blight Games<br />
+                    BonGames<br />
+                    Boomlagoon<br />
+                    Wargaming<br />
+                    Breach Entertainment<br />
+                    Break Soft<br />
+                    Brimstone Interactive<br />
+                    Bugbear Entertainment<br />
+                    Bugbyte Productions<br />
+                    Burger Games<br />
+                    Caffeine Overdose<br />
+                    Catland<br />
+                    Catnip Media<br />
+                    Chat republic Games<br />
+                    Cloud Fortress Games<br />
+                    Clusterloop<br />
+                    CodeCube Brothers<br />
+                    Codespace<br />
+                    Colossal Order<br />
+                    Combo Breaker<br />
+                    Convict Games<br />
+                    CornFox Brothers<br />
+                    Creeng<br />
+                    Creetah<br />
+                    Critical Force Entertainment<br />
+                    CSE Simulation <br />
+                    Ctrl Alt Ninja<br />
+                    Cubicle Games<br />
+                    Cubijoy<br />
+                    Cute Attack<br />
+                    Dark Amber SoftWorks<br />
+                    Dazzle Rocks<br />
+                    Décron Studios<br />
+                    Detocroix Company<br />
+                    Dicework Games<br />
+                    DieNo Games<br />
+                    Dized / Playmore Games<br />
+                    Digital Chocolate<br />
+                    Digital Hammer<br />
+                    Direlight<br />
+                    Dodreams<br />
+                    Draconus Entertainment<br />
+                    Dramaforum<br />
+                    Dreamloop Games<br />
+                    EA Maxis Finland<br />
+                    Eeku<br />
+                    Eemeli Kelokorpi<br />
+                    Emptyhill<br />
+                    Empires Not Vampires Entertainment<br />
+                    Endless Tea Studios<br />
+                    Epic Owl<br />
+                    Escapism Artworks<br />
+                    Everywear Games<br />
+                    Evocat Games<br />
+                    Exoskeleton<br />
+                    Facepalm Games<br />
+                    Fakefish<br />
+                    FanART Games<br />
+                    Fantastec<br />
+                    Faros Business Games<br />
+                    Fat Lemon Entertainment<br />
+                    Fat Tail Productions<br />
+                    Fingersoft<br />
+                    Finnowar<br />
+                    Firetail Games<br />
+                    Fitness Village<br />
+                    Flatfish Games<br />
+                    FRACTiLE Games<br />
+                    Fragment Production FRAK<br />
+                    Frogmind<br />
+                    Frostbullet<br />
+                    Frozen vision<br />
+                    Frozenbyte<br />
+                    Fun Academy<br />
+                    Fundox / Sneeweis<br />
+                    Funtek<br />
+                    Futurefly<br />
+                    Futurepier <br />
+                    Futureplay<br />
+                    Futusoft<br />
+                    Gajatri Studios<br />
+                    GameLayer<br />
+                    Gamelion/Gauffin Group<br />
+                    Gameloft Helsinki<br />
+                    Games & Tales<br />
+                    Gamify Finland<br />
+                    Giant Spoon<br />
+                    Gigglebug Entertainment <br />
+                    Glad Game Studio<br />
+                    Goodkind<br />
+                    GoodLife Technologies<br />
+                    Grail Group<br />
+                    Grain Village Studios<br />
+                    Grand Cru<br />
+                    Gray City Wolves<br />
+                    Greatest Heroes <br />
+                    Greener Grass<br />
+                    Grey Area<br />
+                    Grimrush<br />
+                    Grit Studio<br />
+                    Grove Comp<br />
+                    GRX Game Studio<br />
+                    Haituva innovations<br />
+                    Halflike<br />
+                    Happy Hobgoblin<br />
+                    Happywise<br />
+                    Hatch Entertainment<br />
+                    Hatfuls<br />
+                    Hawina Productions<br />
+                    Headnought<br />
+                    Healthgamer<br />
+                    Heavyweight Rex<br />
+                    Helmeni<br />
+                    Helsinki Game Works<br />
+                    HELYEES<br />
+                    High Score<br />
+                    HiHappening<br />
+                    Hill Climb Racing<br />
+                    Hisome<br />
+                    Hologram Monster <br />
+                    Housemarque<br />
+                    Huijaus Studios<br />
+                    Hurry Up! Games<br />
+                    Hyperkani<br />
+                    Iceflake Studios<br />
+                    IfElseMedia<br />
+                    Ikoni Innovations<br />
+                    Ikoniac<br />
+                    Immersal<br />
+                    Immobile Games<br />
+                    Indium games<br />
+                    IndustrySim<br />
+                    Innogiant<br />
+                    Innolion<br />
+                    Instant Kingdom<br />
+                    Intervisio<br />
+                    Ironized<br />
+                    IronSight<br />
+                    Jalomieli<br />
+                    Jani Paakala<br />
+                    JesterSoft Games<br />
+                    JetMelon<br />
+                    JINKE Group<br />
+                    JIVION<br />
+                    Joensuu Games<br />
+                    Juho Kastemaa<br />
+                    Jumbon/Cartman <br />
+                    Jumibois<br />
+                    Junebit.<br />
+                    Jussi Simpanen<br />
+                    JVP-Team Ky<br />
+                    Kaamos Games<br />
+                    Kajaani Game Studios<br />
+                    Kajak Games<br />
+                    Kalabalik Studio<br />
+                    Kamina Dimension<br />
+                    KAMK Kajability<br />
+                    Kamu & Kamu<br />
+                    Katve Entertainment<br />
+                    KIDE Entertainment<br />
+                    Kiemura<br />
+                    Kimble Games<br />
+                    kimmo halonen<br />
+                    Kinahmi Games<br />
+                    Kinos Game Studio<br />
+                    Kloonigames<br />
+                    Kolibri Studios<br />
+                    Kollektiwe<br />
+                    Kopla Games<br />
+                    Kotka Games<br />
+                    Koukoi Games<br />
+                    Kraftix Games<br />
+                    Kukouri Mobile Entertainment<br />
+                    Kuvion<br />
+                    Kuuasema<br />
+                    Kuutti Entertainment<br />
+                    Kuura Playhouse<br />
+                    Kyy Games<br />
+                    Kyynele Design<br />
+                    Lightneer<br />
+                    Linnama Entertainment<br />
+                    Liquid Flower<br />
+                    Lizard Hazard Games<br />
+                    Logicnap<br />
+                    Loiste Interactive<br />
+                    Lokus Digital<br />
+                    Lucky You Studio<br />
+                    LudoCraft <br />
+                    Lume Games<br />
+                    Lumonium<br />
+                    Lunar Byte<br />
+                    Lunar Collapse<br />
+                    Majasalmi<br />
+                    Mana Giant<br />
+                    Mantisbite<br />
+                    MarimoGames<br />
+                    Markan saha<br />
+                    MeanFish / Valaa<br />
+                    Mediaholvi<br />
+                    MeDungeon<br />
+                    Meizi Games<br />
+                    Mekiwi<br />
+                    Mental Moustache<br />
+                    Merge Heroes<br />
+                    MetaVerstas<br />
+                    Meteo Game House<br />
+                    Metka Games<br />
+                    MHGames<br />
+                    Mikrotie<br />
+                    Mindfield Games<br />
+                    Minestudios<br />
+                    Ministry of Games<br />
+                    Minus Degree Mobile<br />
+                    Mirake<br />
+                    Mistypire Studios<br />
+                    Mobilive entertainment<br />
+                    Mobiteos<br />
+                    Moido Games<br />
+                    Morrow Games<br />
+                    MotionVolt Games<br />
+                    Motorious<br />
+                    Mountain sheep<br />
+                    Mubik Entertainment<br />
+                    Muro Studios<br />
+                    Musopia/Four Chords<br />
+                    MyGamez Finland<br />
+                    Namida Games<br />
+                    Napko<br />
+                    Nekobolt<br />
+                    Neurogaming Finland<br />
+                    Next Games<br />
+                    Nightly Studios<br />
+                    NitroGames<br />
+                    No More Pie<br /> Nonstop Games<br />
+                    Nopia<br />
+                    Nordic Mobile Labs<br />
+                    NordicEdu<br />
+                    NorthWind Studios<br />
+                    Ocean View Games <br />
+                    Octane Games<br />
+                    Oddrok<br />
+                    OOKOO interactive<br />
+                    Ookoohko<br />
+                    Olento Life<br />
+                    Osumia Games Osuuskunta Hastur<br />
+                    Otus Games<br />
+                    Outloud<br />
+                    Owl Valley Team<br />
+                    Oyos Games<br />
+                    Panic Art Studios<br />
+                    Parta Games<br />
+                    PartTimeMonkey<br />
+                    Pasi Hanninen<br />
+                    Pauhu Games<br />
+                    Pauli Potta Games<br />
+                    Pelio<br />
+                    Peliosuuskunta Expa<br />
+                    Pelite Productions<br />
+                    Perilune<br />
+                    Pikkukala <br />
+                    Pintxo Creative<br />
+                    Pip Games<br />
+                    Pixolane<br />
+                    Placeholder<br />
+                    Planetboard<br />
+                    Platonic Partnership<br />
+                    Playraven<br />
+                    Playsign<br />
+                    Playgain<br />
+                    Please Be Patient<br />
+                    PLGND Finland<br />
+                    Polar Bunny<br />
+                    PolarSpin<br />
+                    PolygonToys<br />
+                    Poppaa Entertainment<br />
+                    Prank Entertainment<br />
+                    Prodigium Game Studios<br />
+                    Psyon Games<br />
+                    Pulma Games<br />
+                    Puimuri Games<br />
+                    Punch Wolf<br />
+                    Quadro Delta <br />
+                    Quantum Shake<br />
+                    Radical Llama<br />
+                    Ragemode Entertainment<br />
+                    Rammin'Speed Entertainment<br />
+                    Randomfuture<br />
+                    Random Potion<br />
+                    Rat Crew Studios<br />
+                    remote control<br />
+                    Recoil Games<br />
+                    Red Nettle Studio<br />
+                    Redlynx<br />
+                    Red Shirt Games<br />
+                    Red Stage Entertainment<br />
+                    Reforged Studios<br />
+                    Relationship Games<br />
+                    Remedy Entertainment<br />
+                    Resistance Games<br />
+                    Rigged Mind<br />
+                    Rieha Creative<br />
+                    Rimeforge Entertainment<br />
+                    Rival Games<br />
+                    Rivergames<br />
+                    Robber Docks<br />
+                    Robote Games<br />
+                    Rocket Pack<br />
+                    Rockodile Games<br />
+                    Round Zero<br />
+                    Routa Games<br />
+                    Rovio Entertainment <br />
+                    Rumilus Design<br />
+                    Run Thunder Software<br />
+                    Rusto games<br />
+                    Rx3 Studio<br />
+                    Sadetta<br />
+                    Sandy Entertainment<br />
+                    Sandy Island Games<br />
+                    Sapeli Studio<br />
+                    Sawomo<br />
+                    Second Lion<br />
+                    Second Order<br />
+                    Secret Exit<br />
+                    Seepia Games<br />
+                    Sekunda<br />
+                    Seriously Digital Entertainment <br />
+                    Shark Punch<br />
+                    Sharkfishstudio<br />
+                    Sharpened Edge Studios<br />
+                    Shipyard Games<br />
+                    Shiver Games<br />
+                    SIEIDI<br />
+                    Silvermile<br />
+                    Silverquill<br />
+                    SimuGames Consulting<br />
+                    SingOn /Grey Brain<br />
+                    Shotgun Gaming<br />
+                    Skånerbotten<br />
+                    Skillpixels<br />
+                    Skydome Entertainment<br />
+                    Skyrock Games<br />
+                    SlowMo<br />
+                    Small Giant Games<br /> SnowFall<br />
+                    Snowhound<br />
+                    Snowmillcode<br />
+                    Soihtu Games<br />
+                    Songhi Entertainment<br />
+                    Spawn Point<br />
+                    Spinfy<br />
+                    Spyric Entertainment<br />
+                    Star Arcade<br />
+                    Starflower Games<br />
+                    Steady Mushroom<br />
+                    Still Running<br />
+                    Stolen Shoes Entertainment<br />
+                    Stormcharge<br />
+                    Strobotnik<br />
+                    Stupid Stupid Games<br />
+                    Subsolar Entertainment<br />
+                    Sulake Corporation<br />
+                    Sun In Eye Productions<br />
+                    Suomi-Peli<br />
+                    Super God<br />
+                    Supercell<br />
+                    Superplus Games<br />
+                    Swan Man Games<br />
+                    Syntax Eror Poroductions<br />
+                    Taifuuni Design<br />
+                    Takomo Games<br />
+                    Taphold<br />
+                    TatLabs<br />
+                    Teacher Gaming LLC<br />
+                    Team Action Zone<br />
+                    Team OCMO<br />
+                    Team RUN!<br />
+                    Teatime Research<br />
+                    Tedious & Devious<br />
+                    Terafox<br />
+                    TeeKooGAmes<br />
+                    Theory Interactive<br />
+                    TicBits<br />
+                    Tietomato<br />
+                    Tigerhat Games <br />
+                    Timbermint Games<br />
+                    Tiny Acorn Productions<br />
+                    TJR Games / Team Jolly Roger<br />
+                    Traplight<br />
+                    Tree Men Games<br />
+                    Treehouse<br />
+                    Tribe studios / Palringo<br />
+                    Tribeflame<br />
+                    Triplebit Studios <br />
+                    Triplesec<br />
+                    Tripworks<br />
+                    TritonWare<br />
+                    Trix Games<br />
+                    ttursas<br />
+                    Tuiske Productions<br />
+                    Tuliotus<br />
+                    Tundra Games<br />
+                    Tunnel Ground<br />
+                    Tuotanthtiö Tuokio<br />
+                    Turmoil Games<br />
+                    Twine Games<br />
+                    Two Men and a Dog<br />
+                    Two Tales Games<br />
+                    tyrske<br />
+                    Ulappa apps<br />
+                    Umber Games<br />
+                    underRadar Games<br />
+                    Uplause<br />
+                    Urea Interactive Tmi<br />
+                    Vaki Games<br />
+                    Valo Motion<br />
+                    Vast Reality<br />
+                    Viima Games<br />
+                    Viistopro<br />
+                    Ville Helin<br />
+                    Vinja Games<br />
+                    Virtual Air Guitar Company<br />
+                    Virtual Frontiers<br />
+                    Visual Mind<br />
+                    Visiogames<br />
+                    Vulpine Games<br />
+                    Walk Mode<br />
+                    Wave 7 Games<br />
+                    WayBefore<br />
+                    WAYS TECH<br />
+                    We are Bind<br />
+                    We Eat Crayons<br />
+                    Weaselbat Games<br />
+                    Wintersky Entertainment<br />
+                    Wondercape Games<br />
+                    WordDive<br />
+                    Wronghut<br />
+                    WYWIWYG<br />
+                    YATATOY<br />
+                    YEEA Work<br />
+                    YeaBoing<br />
+                    Youth Control Games<br />
+                    Yousician<br />
+                    Zaibatsu Interactive<br />
+                    Zaubug<br />
+                    Zemeho<br />
+                    Zorg Entertainment<br />
+                </div>
+            </div>
+            <a name="founders"></a>
+            <div class="slide">
+                <img style="max-height: 60vh; max-width:60vw; margin-bottom: 10vh;" src="images/founders.png" alt=""><br>
+            </div>
+                <div class="slide">
+                <img style="height: 315px;" src="images/assembly2002.jpg" alt="">
+                <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/InrGJ7C9B3s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+            </div>
+            <a name="ilari"></a>
+            <blockquote>
+                <p class="year">1995</p>
+                <p class="quote">In May Finland won the Ice Hockey World Championships. In June we got funded. In August I was looking at my first paycheck, amazed that one can actually make money doing this.</p>
+                <p class="name">Ilari Kuittinen, CEO of Housemarque, on getting their first publishing deal.</p>
+            </blockquote>
+            <div class="slide">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/5Bp4ZuTcD0A?start=89" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <a name="riot"></a>
+            <blockquote>
+                <p class="year">2002</p>
+                <p class="quote">We had a clear vision of the mobile gaming explosion. None of us would have guessed it would take until 2008 to come true.</p>
+                <p class="name">Markus Pasula, future founder of Grand Cru, about his time at Riot Entertainment</p>
+            </blockquote>
+            <a name="teemu"></a>
+            <blockquote>
+                <p class="year">2004</p>
+                <p class="quote">
+                    For years I worked and worked to get a deal done in LA. After 4 years of this grind, on the day I'm closing my first deal, with Disney to create the Virtual Magic Kingdom, I get a horrific toothache. So instead of a celebration, I get a root canal.
+                </p>
+                <p class="name">Teemu Huuhtanen, future founder of Next Games, on his first deal in Hollywood.</p>
+            </blockquote>
+            <a name="samuli"></a>
+            <blockquote>
+                <p class="year">2010</p>
+                <p class="quote">Nobody wanted to touch us. We had to beg people to come see what we had built. Finally we got one small publisher to take a look. They loved it. The word spread like wildfire overnight and the next morning there was a line at the door.</p>
+                <p class="name">Samuli Syvähuoko, founder of Recoil Games, on getting a publishing deal after a failed project. </p>
+            </blockquote>
+            <a name="toni"></a>
+            <blockquote>
+                <p class="year">2012</p>
+                <p class="quote">I saw this simple free-to-play BMX game by Ben Hazard that had netted $3M. I knew I could make a better game. So I made Hill Climb Racing just as a quick test.</p>
+                <p class="name">Toni Fingerroos, founder of Fingersoft. Hill Climb Racing has been downloaded more than 1 billion times.</p>
+            </blockquote>
+            <a name="smg"></a>
+            <blockquote>
+                <p class="year">2017</p>
+                <p class="quote">I was presenting our soft launch data to one of the biggest VCs in the industry. He told me: "You don't have a chance. You don't know anything about role playing games. You've never made a role playing game."</p>
+                <p class="name">Timo Soininen, founder of Small Giant Games. Small Giant was sold to Zynga less than 2 years later for $560M.</p>
+            </blockquote>
+            <a name="daniel"></a>
+            <div class="slide recap">
+                <p>Recap:</p>
+                <ul>
+                    <li>New platform - new opportunity <br><span>says the company still focused on PC, 25 years later.</span></li>
 
-        </div>
-        <a name="ilari"></a>
-        <blockquote>
-            <p class="year">1995</p>
-            <p class="quote">In May Finland won the Ice Hockey World Championships. In June we got funded. In August I was looking at my first paycheck, amazed that one can actually make money doing this.</p>
-            <p class="name">Ilari Kuittinen, CEO of Housemarque, on getting their first publishing deal.</p>
-        </blockquote>
-        <a name="riot"></a>
-        <blockquote>
-            <p class="year">2002</p>
-            <p class="quote">We had a clear vision of the mobile gaming future. Nobody could have guessed it would take until 2008 for it to come true.</p>
-            <p class="name">Markus Pasula, future founder of Grand Cru, about his time at Riot Entertainme-nt</p>
-        </blockquote>
-        <a name="teemu"></a>
-        <blockquote>
-            <p class="year">2004</p>
-            <p class="quote">Four years of work in LA culmiated on one day in a root canal, swollen cheeck and a deal with Disney to create the Virtual Magic Kingdom.</p>
-            <p class="name">Teemu Huuhtanen, future founder of Next Games, on his first signed deal in Hollywood.</p>
-        </blockquote>
-        <a name="samuli"></a>
-        <blockquote>
-            <p class="year">2010</p>
-            <p class="quote">Nobody wanted to touch us. We had to beg people to come see what we had built. Finally we got one small publisher to take a look. They loved it. The word spread like wildfire overnight and the next morning there was a line at the door.</p>
-            <p class="name">Samuli Syvähuoko, founder of Recoil Games, on getting a publishing deal after a failed project. </p>
-        </blockquote>
-        <a name="toni"></a>
-        <blockquote>
-            <p class="year">2012</p>
-            <p class="quote">I saw this simple free-to-play BMX game by Ben Hazard that had netted $3M. I knew I could make a better game. So I made Hill Climb Racing just as a quick test.</p>
-            <p class="name">Toni Fingerroos, founder of Fingersoft. Hill Climb Racing has been downloaded more than 1 billion times.</p>
-        </blockquote>
-        <a name="smg"></a>
-        <blockquote>
-            <p class="year">2017</p>
-            <p class="quote">I was presenting our soft launch data to one of the biggest VCs in the industry. He told me: "You don't have a chance. You don't know anything about role playing games. You've never made a role playing game."</p>
-            <p class="name">Timo Soininen, founder of Small Giant Games. Small Giant was sold to Zynga less than 2 years later for $560M.</p>
-        </blockquote>
-        <a name="daniel"></a>
-        <blockquote>
-            <p class="year">2019</p>
-            <p class="quote"><!-- Modularization, metrics driven development --></p>
+                    <li>Start with a vision of the future<br><span>says the guy who had a vision 6 years too early.</span></li>
+
+                    <li>Co-operate with great brands<br><span>even if it feels like getting root canal.</span></li>
+
+                    <li>Don't give up after a failure<br><span>even if a victory is just an intermediary stop on your route towards another failure.</span></li>
+
+                    <li>Belive in instant success<br><span>after 2 bankruptcies and 15 years of applicable experience.</span></li>
+
+                    <li>Build the tools of unfair advantage.<br><span>I've got nothing!</span></li></li>
+                </ul>
+
             <p class="name"></p>
-        </blockquote>
-        <div class="slide companies">
-                10 tons<br />
-                10monkeys<br />
-                3DTalo Finland<br />
-                3rd Eye Studios<br />
-                4mob Games<br />
-                5 more minutes<br />
-                A1 Media<br />
-                Aatos Media<br />
-                ActionSquad Studios<br />
-                Add Inspiration<br />
-                Advant Games<br />
-                Adventure Islands<br />
-                Aeonic Entertainment<br />
-                Afterlife Entertainment<br />
-                Aittokoski Experience<br />
-                Almost Human<br />
-                Alpakka Media<br />
-                Alternative Games<br />
-                Amistech Games<br />
-                Aniway<br />
-                Antiproto<br />
-                Apex Games<br />
-                App Innovations Finland<br />
-                Appiukko<br />
-                Appstar<br />
-                Aptual<br />
-                Arcticplay Studios<br />
-                Areena-pelit<br />
-                Armada Interactive<br />
-                Astalo Games<br />
-                Astrosnout<br />
-                Ataverti Tmi<br />
-                Aware Games Coop<br />
-                Hempuli<br />
-                Bad Crane<br />
-                Bad Mood Games<br />
-                Ball-it<br />
-                Barracuda Disaster<br />
-                Beiz<br />
-                BelleGames<br />
-                Big Ear Games<br />
-                BitByByte Creations<br />
-                Bitecore<br />
-                BitWeird<br />
-                Black Poodle Entertainment<br />
-                Blackland Games<br />
-                Blight Games<br />
-                BonGames<br />
-                Boomlagoon<br />
-                Wargaming<br />
-                Breach Entertainment<br /> 
-                Break Soft<br /> 
-                Brimstone Interactive<br />
-                Bugbear Entertainment<br /> 
-                Bugbyte Productions<br />
-                Burger Games<br />
-                Caffeine Overdose<br />
-                Catland<br />
-                Catnip Media<br />
-                Chat republic Games<br />
-                Cloud Fortress Games<br />
-                Clusterloop<br />
-                CodeCube Brothers<br />
-                Codespace<br />
-                Colossal Order<br />
-                Combo Breaker<br />
-                Convict Games<br />
-                CornFox Brothers<br />
-                Creeng<br />
-                Creetah<br />
-                Critical Force Entertainment<br />
-                CSE Simulation <br />
-                Ctrl Alt Ninja<br />
-                Cubicle Games<br />
-                Cubijoy<br />
-                Cute Attack<br />
-                Dark Amber SoftWorks<br />
-                Dazzle Rocks<br />
-                Décron Studios<br />
-                Detocroix Company<br />
-                Dicework Games<br />
-                DieNo Games<br />
-                Dized / Playmore Games<br />
-                Digital Chocolate<br />
-                Digital Hammer<br />
-                Direlight<br />
-                Dodreams<br />
-                Draconus Entertainment<br />
-                Dramaforum<br />
-                Dreamloop Games<br />
-                EA Maxis Finland<br />
-                Eeku<br />
-                Eemeli Kelokorpi<br />
-                Emptyhill<br />
-                Empires Not Vampires Entertainment<br />
-                Endless Tea Studios<br />
-                Epic Owl<br />
-                Escapism Artworks<br />
-                Everywear Games<br />
-                Evocat Games<br />
-                Exoskeleton<br />
-                Facepalm Games<br />
-                Fakefish<br />
-                FanART Games<br />
-                Fantastec<br />
-                 Faros Business Games<br />
-                Fat Lemon Entertainment<br />
-                Fat Tail Productions<br />
-                Fingersoft<br />
-                Finnowar<br />
-                Firetail Games<br />
-                Fitness Village<br />
-                Flatfish Games<br />
-                FRACTiLE Games<br />
-                Fragment Production FRAK<br /> 
-                Frogmind<br />
-                Frostbullet<br />
-                Frozen vision<br />
-                Frozenbyte<br />
-                Fun Academy<br />
-                Fundox / Sneeweis<br />
-                Funtek<br />
-                Futurefly<br />
-                Futurepier <br />
-                Futureplay<br />
-                Futusoft<br />
-                Gajatri Studios<br />
-                GameLayer<br />
-                Gamelion/Gauffin Group<br />
-                Gameloft Helsinki<br />
-                Games & Tales<br />
-                Gamify Finland<br />
-                Giant Spoon<br />
-                Gigglebug Entertainment <br />
-                Glad Game Studio<br />
-                Goodkind<br />
-                GoodLife Technologies<br />
-                Grail Group<br />
-                Grain Village Studios<br />
-                Grand Cru<br />
-                Gray City Wolves<br />
-                Greatest Heroes <br />
-                Greener Grass<br />
-                Grey Area<br />
-                Grimrush<br />
-                Grit Studio<br />
-                Grove Comp<br />
-                GRX Game Studio<br />
-                Haituva innovations<br />
-                Halflike<br />
-                Happy Hobgoblin<br />
-                Happywise<br />
-                Hatch Entertainment<br />
-                Hatfuls<br />
-                Hawina Productions<br />
-                Headnought<br />
-                Healthgamer<br />
-                Heavyweight Rex<br />
-                Helmeni<br />
-                Helsinki Game Works<br />
-                HELYEES<br />
-                 High Score<br /> 
-                HiHappening<br />
-                Hill Climb Racing<br /> 
-                Hisome<br />
-                Hologram Monster <br />
-                Housemarque<br />
-                Huijaus Studios<br />
-                Hurry Up! Games<br />
-                Hyperkani<br />
-                Iceflake Studios<br />
-                IfElseMedia<br />
-                Ikoni Innovations<br />
-                Ikoniac<br />
-                Immersal<br />
-                Immobile Games<br />
-                Indium games<br />
-                IndustrySim<br />
-                Innogiant<br />
-                Innolion<br />
-                Instant Kingdom<br />
-                Intervisio<br />
-                Ironized<br />
-                IronSight<br />
-                Jalomieli<br />
-                Jani Paakala<br />
-                JesterSoft Games<br />
-                JetMelon<br />
-                JINKE Group<br />
-                JIVION<br />
-                Joensuu Games<br />
-                Juho Kastemaa<br />
-                Jumbon/Cartman <br />
-                Jumibois<br />
-                Junebit.<br />
-                Jussi Simpanen<br />
-                JVP-Team Ky<br />
-                Kaamos Games<br />
-                Kajaani Game Studios<br />
-                Kajak Games<br />
-                Kalabalik Studio<br />
-                Kamina Dimension<br />
-                KAMK Kajability<br />
-                Kamu & Kamu<br />
-                Katve Entertainment<br />
-                KIDE Entertainment<br />
-                Kiemura<br />
-                Kimble Games<br />
-                kimmo halonen<br />
-                Kinahmi Games<br />
-                Kinos Game Studio<br />
-                Kloonigames<br />
-                Kolibri Studios<br />
-                Kollektiwe<br />
-                Kopla Games<br />
-                Kotka Games<br />
-                Koukoi Games<br />
-                Kraftix Games<br />
-                Kukouri Mobile Entertainment<br /> 
-                Kuvion<br />
-                Kuuasema<br />
-                 Kuutti Entertainment<br />
-                Kuura Playhouse<br />
-                Kyy Games<br />
-                Kyynele Design<br />
-                Lightneer<br />
-                Linnama Entertainment<br />
-                Liquid Flower<br />
-                Lizard Hazard Games<br />
-                Logicnap<br />
-                Loiste Interactive<br />
-                Lokus Digital<br />
-                Lucky You Studio<br />
-                LudoCraft <br />
-                Lume Games<br />
-                Lumonium<br />
-                Lunar Byte<br />
-                Lunar Collapse<br />
-                Majasalmi<br />
-                Mana Giant<br />
-                Mantisbite<br />
-                MarimoGames<br />
-                Markan saha<br />
-                MeanFish / Valaa<br />
-                Mediaholvi<br />
-                MeDungeon<br />
-                Meizi Games<br />
-                Mekiwi<br />
-                Mental Moustache<br />
-                Merge Heroes<br />
-                MetaVerstas<br />
-                Meteo Game House<br />
-                Metka Games<br />
-                MHGames<br />
-                Mikrotie<br />
-                Mindfield Games<br />
-                Minestudios<br />
-                Ministry of Games<br />
-                Minus Degree Mobile<br />
-                Mirake<br />
-                Mistypire Studios<br />
-                Mobilive entertainment<br />
-                Mobiteos<br />
-                Moido Games<br />
-                Morrow Games<br />
-                MotionVolt Games<br />
-                Motorious<br />
-                Mountain sheep<br />
-                Mubik Entertainment<br />
-                Muro Studios<br />
-                Musopia/Four Chords<br />
-                MyGamez Finland<br />
-                Namida Games<br />
-                Napko<br />
-                Nekobolt<br />
-                Neurogaming Finland<br />
-                Next Games<br />
-                Nightly Studios<br />
-                NitroGames<br />
-                No More Pie<br /> Nonstop Games<br />
-                Nopia<br />
-                Nordic Mobile Labs<br />
-                NordicEdu<br />
-                NorthWind Studios<br />
-                Ocean View Games <br />
-                Octane Games<br />
-                Oddrok<br />
-                OOKOO interactive<br />
-                Ookoohko<br />
-                Olento Life<br />
-                Osumia Games Osuuskunta Hastur<br />
-                Otus Games<br />
-                Outloud<br />
-                Owl Valley Team<br />
-                Oyos Games<br />
-                Panic Art Studios<br />
-                Parta Games<br />
-                PartTimeMonkey<br />
-                Pasi Hanninen<br />
-                Pauhu Games<br />
-                Pauli Potta Games<br />
-                Pelio<br />
-                Peliosuuskunta Expa<br />
-                Pelite Productions<br />
-                Perilune<br />
-                Pikkukala <br />
-                Pintxo Creative<br />
-                Pip Games<br />
-                Pixolane<br />
-                Placeholder<br />
-                Planetboard<br />
-                Platonic Partnership<br />
-                Playraven<br />
-                Playsign<br />
-                Playgain<br />
-                Please Be Patient<br />
-                PLGND Finland<br />
-                Polar Bunny<br />
-                PolarSpin<br />
-                PolygonToys<br />
-                Poppaa Entertainment<br />
-                Prank Entertainment<br />
-                Prodigium Game Studios<br />
-                Psyon Games<br />
-                Pulma Games<br />
-                Puimuri Games<br />
-                Punch Wolf<br />
-                Quadro Delta <br />
-                Quantum Shake<br />
-                Radical Llama<br />
-                Ragemode Entertainment<br />
-                Rammin'Speed Entertainment<br />
-                Randomfuture<br />
-                Random Potion<br />
-                Rat Crew Studios<br />
-                remote control<br />
-                Recoil Games<br />
-                Red Nettle Studio<br />
-                Redlynx<br />
-                Red Shirt Games<br />
-                Red Stage Entertainment<br />
-                Reforged Studios<br />
-                Relationship Games<br />
-                Remedy Entertainment<br />
-                Resistance Games<br />
-                Rigged Mind<br />
-                Rieha Creative<br />
-                Rimeforge Entertainment<br />
-                Rival Games<br />
-                Rivergames<br />
-                Robber Docks<br />
-                Robote Games<br />
-                Rocket Pack<br />
-                Rockodile Games<br />
-                Round Zero<br />
-                Routa Games<br />
-                Rovio Entertainment <br />
-                Rumilus Design<br />
-                Run Thunder Software<br />
-                Rusto games<br />
-                Rx3 Studio<br />
-                Sadetta<br />
-                Sandy Entertainment<br />
-                Sandy Island Games<br />
-                Sapeli Studio<br />
-                Sawomo<br />
-                Second Lion<br />
-                Second Order<br />
-                Secret Exit<br />
-                Seepia Games<br />
-                Sekunda<br />
-                Seriously Digital Entertainment <br />
-                Shark Punch<br />
-                Sharkfishstudio<br />
-                Sharpened Edge Studios<br />
-                Shipyard Games<br />
-                Shiver Games<br />
-                SIEIDI<br />
-                Silvermile<br />
-                Silverquill<br />
-                SimuGames Consulting<br />
-                SingOn /Grey Brain<br />
-                Shotgun Gaming<br />
-                Skånerbotten<br />
-                Skillpixels<br />
-                Skydome Entertainment<br />
-                Skyrock Games<br />
-                SlowMo<br />
-                Small Giant Games<br /> SnowFall<br />
-                Snowhound<br />
-                Snowmillcode<br />
-                Soihtu Games<br />
-                Songhi Entertainment<br />
-                Spawn Point<br />
-                Spinfy<br />
-                Spyric Entertainment<br />
-                Star Arcade<br />
-                Starflower Games<br />
-                Steady Mushroom<br />
-                Still Running<br />
-                Stolen Shoes Entertainment<br />
-                Stormcharge<br />
-                Strobotnik<br />
-                Stupid Stupid Games<br />
-                Subsolar Entertainment<br />
-                Sulake Corporation<br />
-                Sun In Eye Productions<br />
-                Suomi-Peli<br />
-                Super God<br />
-                Supercell<br />
-                Superplus Games<br />
-                Swan Man Games<br />
-                Syntax Eror Poroductions<br />
-                Taifuuni Design<br />
-                Takomo Games<br />
-                Taphold<br />
-                TatLabs<br />
-                Teacher Gaming LLC<br />
-                Team Action Zone<br />
-                Team OCMO<br />
-                Team RUN!<br />
-                Teatime Research<br />
-                Tedious & Devious<br />
-                Terafox<br />
-                TeeKooGAmes<br />
-                Theory Interactive<br />
-                TicBits<br />
-                Tietomato<br />
-                Tigerhat Games <br />
-                Timbermint Games<br />
-                Tiny Acorn Productions<br />
-                TJR Games / Team Jolly Roger<br />
-                Traplight<br />
-                Tree Men Games<br />
-                Treehouse<br />
-                Tribe studios / Palringo<br />
-                Tribeflame<br />
-                Triplebit Studios <br />
-                Triplesec<br />
-                Tripworks<br />
-                TritonWare<br />
-                Trix Games<br />
-                ttursas<br />
-                Tuiske Productions<br />
-                Tuliotus<br />
-                Tundra Games<br />
-                Tunnel Ground<br />
-                Tuotanthtiö Tuokio<br />
-                Turmoil Games<br />
-                Twine Games<br />
-                Two Men and a Dog<br />
-                Two Tales Games<br />
-                tyrske<br />
-                Ulappa apps<br />
-                Umber Games<br />
-                underRadar Games<br />
-                Uplause<br />
-                Urea Interactive Tmi<br />
-                Vaki Games<br />
-                Valo Motion<br />
-                Vast Reality<br />
-                Viima Games<br />
-                Viistopro<br />
-                Ville Helin<br />
-                Vinja Games<br />
-                Virtual Air Guitar Company<br />
-                Virtual Frontiers<br />
-                Visual Mind<br />
-                Visiogames<br />
-                Vulpine Games<br />
-                Walk Mode<br />
-                Wave 7 Games<br />
-                WayBefore<br />
-                WAYS TECH<br />
-                We are Bind<br />
-                We Eat Crayons<br />
-                Weaselbat Games<br />
-                Wintersky Entertainment<br />
-                Wondercape Games<br />
-                WordDive<br />
-                Wronghut<br />
-                WYWIWYG<br />
-                YATATOY<br />
-                YEEA Work<br />
-                YeaBoing<br />
-                Youth Control Games<br />
-                Yousician<br />
-                Zaibatsu Interactive<br />
-                Zaubug<br />
-                Zemeho<br />
-                Zorg Entertainment<br />
-        </div>
-        <div class="slide companies live">
-            <img src="images/fgir/fgir-2018-report-064.jpg">
-            <img src="images/fgir/fgir-2018-report-065.jpg">
-            <img src="images/fgir/fgir-2018-report-066.jpg">
-            <img src="images/fgir/fgir-2018-report-067.jpg">
-            <img src="images/fgir/fgir-2018-report-068.jpg">
-            <img src="images/fgir/fgir-2018-report-069.jpg">
-            <img src="images/fgir/fgir-2018-report-070.jpg">
-            <img src="images/fgir/fgir-2018-report-071.jpg">
-            <img src="images/fgir/fgir-2018-report-072.jpg">
-            <img src="images/fgir/fgir-2018-report-073.jpg">
-            <img src="images/fgir/fgir-2018-report-074.jpg">
-            <img src="images/fgir/fgir-2018-report-075.jpg">
-            <img src="images/fgir/fgir-2018-report-076.jpg">
-            <img src="images/fgir/fgir-2018-report-077.jpg">
-            <img src="images/fgir/fgir-2018-report-078.jpg">
-            <img src="images/fgir/fgir-2018-report-079.jpg">
-            <img src="images/fgir/fgir-2018-report-080.jpg">
-            <img src="images/fgir/fgir-2018-report-081.jpg">
-            <img src="images/fgir/fgir-2018-report-082.jpg">
-            <img src="images/fgir/fgir-2018-report-083.jpg">
-            <img src="images/fgir/fgir-2018-report-084.jpg">
-            <img src="images/fgir/fgir-2018-report-085.jpg">
-            <img src="images/fgir/fgir-2018-report-086.jpg">
-            <img src="images/fgir/fgir-2018-report-087.jpg">
-            <img src="images/fgir/fgir-2018-report-088.jpg">
-            <img src="images/fgir/fgir-2018-report-089.jpg">
-            <img src="images/fgir/fgir-2018-report-090.jpg">
-            <img src="images/fgir/fgir-2018-report-091.jpg">
-            <img src="images/fgir/fgir-2018-report-092.jpg">
-            <img src="images/fgir/fgir-2018-report-093.jpg">
-            <img src="images/fgir/fgir-2018-report-094.jpg">
-            <img src="images/fgir/fgir-2018-report-095.jpg">
-            <img src="images/fgir/fgir-2018-report-096.jpg">
-            <img src="images/fgir/fgir-2018-report-097.jpg">
-            <img src="images/fgir/fgir-2018-report-098.jpg">
-            <img src="images/fgir/fgir-2018-report-099.jpg">
-            <img src="images/fgir/fgir-2018-report-100.jpg">
-            <img src="images/fgir/fgir-2018-report-101.jpg">
-            <img src="images/fgir/fgir-2018-report-102.jpg">
-            <img src="images/fgir/fgir-2018-report-103.jpg">
-            <img src="images/fgir/fgir-2018-report-104.jpg">
-            <img src="images/fgir/fgir-2018-report-105.jpg">
-            <img src="images/fgir/fgir-2018-report-106.jpg">
-            <img src="images/fgir/fgir-2018-report-107.jpg">
-            <img src="images/fgir/fgir-2018-report-108.jpg">
-            <img src="images/fgir/fgir-2018-report-109.jpg">
-            <img src="images/fgir/fgir-2018-report-110.jpg">
-            <img src="images/fgir/fgir-2018-report-111.jpg">
-            <img src="images/fgir/fgir-2018-report-112.jpg">
-            <img src="images/fgir/fgir-2018-report-113.jpg">
-            <img src="images/fgir/fgir-2018-report-114.jpg">
-            <img src="images/fgir/fgir-2018-report-115.jpg">
-            <img src="images/fgir/fgir-2018-report-116.jpg">
-            <img src="images/fgir/fgir-2018-report-117.jpg">
-            <img src="images/fgir/fgir-2018-report-118.jpg">
-            <img src="images/fgir/fgir-2018-report-119.jpg">
-            <img src="images/fgir/fgir-2018-report-120.jpg">
-            <img src="images/fgir/fgir-2018-report-121.jpg">
-            <img src="images/fgir/fgir-2018-report-122.jpg">
-            <img src="images/fgir/fgir-2018-report-123.jpg">
-            <img src="images/fgir/fgir-2018-report-124.jpg">
-            <img src="images/fgir/fgir-2018-report-125.jpg">
-            <img src="images/fgir/fgir-2018-report-126.jpg">
-            <img src="images/fgir/fgir-2018-report-127.jpg">
-            <img src="images/fgir/fgir-2018-report-128.jpg">
-            <img src="images/fgir/fgir-2018-report-129.jpg">
-            <img src="images/fgir/fgir-2018-report-130.jpg">
-            <img src="images/fgir/fgir-2018-report-131.jpg">
-            <img src="images/fgir/fgir-2018-report-132.jpg">
-            <img src="images/fgir/fgir-2018-report-133.jpg">
-            <img src="images/fgir/fgir-2018-report-134.jpg">
-            <img src="images/fgir/fgir-2018-report-135.jpg">
-        </div>
-        <div class="slide">
-            <div class="container">
-
-                <div class="box">
-                    <img class="round" src="images/pasi.jpg" alt="Pasi Jokinen">
-                    <h3>Pasi Jokinen</h3>
-                    <p><a href="https://www.linkedin.com/in/pasijokinen/">Author</a> is an advisor at <a href="http://fingersoft.net">Fingersoft</a>, the makers of <a href="http://playhcr.com">Hill Climb Racing</a>. He is <a href="https://www.twitter.com/pasiaj">@pasiaj</a> on Twitter.</p>
-                </div>
-
-                <div class="box">
-                    <a href="http://www.neogames.fi/wp-content/uploads/2019/04/FGIR-2018-Report.pdf"><img class="round" src="images/FGIR2018cover_web.png" alt="FINNISH GAME INDUSTRY 2018 REPORT"></a>
-                    <h3>Finnish Game Industry 2018</h3>
-                    <p>Download <a href="www.neogames.com">Neogames'</a> <a href="http://www.neogames.fi/wp-content/uploads/2019/04/FGIR-2018-Report.pdf">2018 report</a><br>on the Finnish game industry.</p>
-                </div>
-
-
-
-<!--                 <div class="box">
-                    <a href="http://www.fingersoft.net"><img class="round" src="images/fs.png" alt="Fingersoft"></a>
-                </div>
-                <div class="box">
-                    <a href="https://round-zero.com/"><img class="round" src="images/rz.png" alt="Round Zero"></a>
-                </div> -->
             </div>
-
-    </div>
-    <div class="footer">
-        <ul>
-            <li class="person">
-                <a href="#ilari"><img src="images/ilari.jpg" alt=""></a><!--Amiga -> PC-->
-                <h3>Ilari Kuittinen</h3>
-                <p>1995</p>
-            </li>
-            <li class="person"> <!-- False start of mobile -->
-                <a href="#riot"><img src="images/markus.jpg" alt=""></a>
-                <h3>Markus Pasula</h3>
-                <p>2002</p>
-            </li>
-            <li class="person"> <!-- iPhone -->
-                <a href="#teemu"><img src="images/teemu.jpg" alt=""></a>
-                <h3>Teemu Huuhtanen</h3>
-                <p>2004</p>
-            </li>
-            <li class="person"> <!-- Digital distribution -->
-                <a href="#samuli"><img src="images/samuli.jpg" alt=""></a>
-                <h3>Samuli&nbsp;Syvähuoko</h3>
-                <p>2010</p>
-            </li>
-            <li class="person"> <!-- free-to-play -->
-                <a href="#toni"><img src="images/toni.jpg" alt=""></a>
-                <h3>Toni Fingerroos</h3>
-                <p>2012</p>
-            </li>
-            <li class="person">
-                <a href="#smg"><img src="images/timo.jpg" alt=""></a>
-                <h3>Timo Soininen</h3>
-                <p>2016</p>
-            </li>
-            <li class="person"> <!-- user-acquisition -->
-                <a href="#daniel"><img src="images/muumi.png" alt=""></a>
-                <h3></h3>
-                <p>2018</p>
-            </li>
-<!--            <li class="person">
-                <a href="#daniel"><img src="images/daniel.jpg" alt=""></a>
-                <h3>Daniel Rantala</h3>
-                <p>2019</p>
-            </li>
--->
-<!--
-# 2001-2002 Riot Entertainment: Markus Pasula, SMS-content
-# 2002-2005 Jotain Nokiasta: Start of mobile gaming?
-# 2007 Mikael Hed - on iPhone: Touch screen
-# 2012 Supercell??
-# 2018 Scaling through UA - Small Giant Games
-# 2019 Round Zero -metrics driven development.
--->
-
-        </ul>
-    </div>
-
-    <script type="text/javascript" charset="utf-8">
-        var data = [];
-    </script>
-</body>
+            <div class="slide live">
+                <img src="images/fgir/fgir-2018-report-064.jpg">
+                <img src="images/fgir/fgir-2018-report-065.jpg">
+                <img src="images/fgir/fgir-2018-report-066.jpg">
+                <img src="images/fgir/fgir-2018-report-067.jpg">
+                <img src="images/fgir/fgir-2018-report-068.jpg">
+                <img src="images/fgir/fgir-2018-report-069.jpg">
+                <img src="images/fgir/fgir-2018-report-070.jpg">
+                <img src="images/fgir/fgir-2018-report-071.jpg">
+                <img src="images/fgir/fgir-2018-report-072.jpg">
+                <img src="images/fgir/fgir-2018-report-073.jpg">
+                <img src="images/fgir/fgir-2018-report-074.jpg">
+                <img src="images/fgir/fgir-2018-report-075.jpg">
+                <img src="images/fgir/fgir-2018-report-076.jpg">
+                <img src="images/fgir/fgir-2018-report-077.jpg">
+                <img src="images/fgir/fgir-2018-report-078.jpg">
+                <img src="images/fgir/fgir-2018-report-079.jpg">
+                <img src="images/fgir/fgir-2018-report-080.jpg">
+                <img src="images/fgir/fgir-2018-report-081.jpg">
+                <img src="images/fgir/fgir-2018-report-082.jpg">
+                <img src="images/fgir/fgir-2018-report-083.jpg">
+                <img src="images/fgir/fgir-2018-report-084.jpg">
+                <img src="images/fgir/fgir-2018-report-085.jpg">
+                <img src="images/fgir/fgir-2018-report-086.jpg">
+                <img src="images/fgir/fgir-2018-report-087.jpg">
+                <img src="images/fgir/fgir-2018-report-088.jpg">
+                <img src="images/fgir/fgir-2018-report-089.jpg">
+                <img src="images/fgir/fgir-2018-report-090.jpg">
+                <img src="images/fgir/fgir-2018-report-091.jpg">
+                <img src="images/fgir/fgir-2018-report-092.jpg">
+                <img src="images/fgir/fgir-2018-report-093.jpg">
+                <img src="images/fgir/fgir-2018-report-094.jpg">
+                <img src="images/fgir/fgir-2018-report-095.jpg">
+                <img src="images/fgir/fgir-2018-report-096.jpg">
+                <img src="images/fgir/fgir-2018-report-097.jpg">
+                <img src="images/fgir/fgir-2018-report-098.jpg">
+                <img src="images/fgir/fgir-2018-report-099.jpg">
+                <img src="images/fgir/fgir-2018-report-100.jpg">
+                <img src="images/fgir/fgir-2018-report-101.jpg">
+                <img src="images/fgir/fgir-2018-report-102.jpg">
+                <img src="images/fgir/fgir-2018-report-103.jpg">
+                <img src="images/fgir/fgir-2018-report-104.jpg">
+                <img src="images/fgir/fgir-2018-report-105.jpg">
+                <img src="images/fgir/fgir-2018-report-106.jpg">
+                <img src="images/fgir/fgir-2018-report-107.jpg">
+                <img src="images/fgir/fgir-2018-report-108.jpg">
+                <img src="images/fgir/fgir-2018-report-109.jpg">
+                <img src="images/fgir/fgir-2018-report-110.jpg">
+                <img src="images/fgir/fgir-2018-report-111.jpg">
+                <img src="images/fgir/fgir-2018-report-112.jpg">
+                <img src="images/fgir/fgir-2018-report-113.jpg">
+                <img src="images/fgir/fgir-2018-report-114.jpg">
+                <img src="images/fgir/fgir-2018-report-115.jpg">
+                <img src="images/fgir/fgir-2018-report-116.jpg">
+                <img src="images/fgir/fgir-2018-report-117.jpg">
+                <img src="images/fgir/fgir-2018-report-118.jpg">
+                <img src="images/fgir/fgir-2018-report-119.jpg">
+                <img src="images/fgir/fgir-2018-report-120.jpg">
+                <img src="images/fgir/fgir-2018-report-121.jpg">
+                <img src="images/fgir/fgir-2018-report-122.jpg">
+                <img src="images/fgir/fgir-2018-report-123.jpg">
+                <img src="images/fgir/fgir-2018-report-124.jpg">
+                <img src="images/fgir/fgir-2018-report-125.jpg">
+                <img src="images/fgir/fgir-2018-report-126.jpg">
+                <img src="images/fgir/fgir-2018-report-127.jpg">
+                <img src="images/fgir/fgir-2018-report-128.jpg">
+                <img src="images/fgir/fgir-2018-report-129.jpg">
+                <img src="images/fgir/fgir-2018-report-130.jpg">
+                <img src="images/fgir/fgir-2018-report-131.jpg">
+                <img src="images/fgir/fgir-2018-report-132.jpg">
+                <img src="images/fgir/fgir-2018-report-133.jpg">
+                <img src="images/fgir/fgir-2018-report-134.jpg">
+                <img src="images/fgir/fgir-2018-report-135.jpg">
+            </div>
+            <div class="slide">
+                <div class="container">
+                    <div class="box">
+                        <img class="round" src="images/pasi.jpg" alt="Pasi Jokinen">
+                        <h3>Pasi Jokinen</h3>
+                        <p><a href="https://www.linkedin.com/in/pasijokinen/">Author</a> is an advisor at <a href="http://fingersoft.net">Fingersoft</a>, the makers of <a href="http://playhcr.com">Hill Climb Racing</a>. He is <a href="https://www.twitter.com/pasiaj">@pasiaj</a> on Twitter.</p>
+                    </div>
+                    <div class="box">
+                        <a href="http://www.neogames.fi/wp-content/uploads/2019/04/FGIR-2018-Report.pdf"><img class="round" src="images/FGIR2018cover_web.png" alt="FINNISH GAME INDUSTRY 2018 REPORT"></a>
+                        <h3>Finnish Game Industry 2018</h3>
+                        <p>Download <a href="www.neogames.com">Neogames'</a> <a href="http://www.neogames.fi/wp-content/uploads/2019/04/FGIR-2018-Report.pdf">2018 report</a><br>on the Finnish game industry.</p>
+                    </div>
+                    <!--                 <div class="box">
+                        <a href="http://www.fingersoft.net"><img class="round" src="images/fs.png" alt="Fingersoft"></a>
+                    </div>
+                    <div class="box">
+                        <a href="https://round-zero.com/"><img class="round" src="images/rz.png" alt="Round Zero"></a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <ul>
+                <li class="person">
+                    <a href="#ilari"><img src="images/ilari.jpg" alt=""></a><!--Amiga -> PC-->
+                    <h3>Ilari Kuittinen</h3>
+                    <p>1995</p>
+                </li>
+                <li class="person">
+                    <a href="#riot"><img src="images/markus.jpg" alt=""></a>
+                    <h3>Markus Pasula</h3>
+                    <p>2002</p>
+                </li>
+                <li class="person">
+                    <a href="#teemu"><img src="images/teemu.jpg" alt=""></a>
+                    <h3>Teemu Huuhtanen</h3>
+                    <p>2004</p>
+                </li>
+                <li class="person">
+                    <a href="#samuli"><img src="images/samuli.jpg" alt=""></a>
+                    <h3>Samuli&nbsp;Syvähuoko</h3>
+                    <p>2010</p>
+                </li>
+                <li class="person">
+                    <a href="#toni"><img src="images/toni.jpg" alt=""></a>
+                    <h3>Toni Fingerroos</h3>
+                    <p>2012</p>
+                </li>
+                <li class="person">
+                    <a href="#smg"><img src="images/timo.jpg" alt=""></a>
+                    <h3>Timo Soininen</h3>
+                    <p>2016</p>
+                </li>
+                <!--
+                <li class="person">
+                    <a href="#daniel"><img src="images/daniel.jpg" alt=""></a>
+                    <h3>Daniel Rantala</h3>
+                    <p>2019</p>
+                </li>
+                -->
+                <!--
+                # 2001-2002 Riot Entertainment: Markus Pasula, SMS-content
+                # 2002-2005 Jotain Nokiasta: Start of mobile gaming?
+                # 2007 Mikael Hed - on iPhone: Touch screen
+                # 2012 Supercell??
+                # 2018 Scaling through UA - Small Giant Games
+                # 2019 Round Zero -metrics driven development.
+                -->
+            </ul>
+        </div>
+    </body>
 </html>
